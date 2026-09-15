@@ -171,6 +171,7 @@
   (function intro() {
     const overlay = document.getElementById('intro');
     const name = document.getElementById('intro-name');
+    const role = document.getElementById('intro-role');
     const brandName = document.querySelector('.brand__name');
     const brandMark = document.querySelector('.brand__mark');
     const finish = () => {
@@ -198,6 +199,10 @@
         { transform: `translate(${dx}px, ${dy}px) scale(${scale})`, opacity: nameVisible ? 1 : 0 }
       ], { duration: 950, easing: 'cubic-bezier(.7,0,.2,1)', fill: 'forwards' });
 
+      // The role line fades out (and drifts down slightly) as the name departs
+      if (role) role.animate([{ opacity: 1, transform: 'none' }, { opacity: 0, transform: 'translateY(10px)' }],
+        { duration: 450, easing: 'ease-out', fill: 'forwards' });
+
       overlay.animate([{ opacity: 1 }, { opacity: 0 }],
         { duration: 500, delay: 550, easing: 'ease-out', fill: 'forwards' });
 
@@ -206,7 +211,7 @@
     };
 
     const ready = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
-    ready.then(() => setTimeout(run, 1100));
+    ready.then(() => setTimeout(run, 1500));
   })();
 
   /* ---------- 6. Project summary modals ---------- */
