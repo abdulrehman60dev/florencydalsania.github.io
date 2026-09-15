@@ -1,0 +1,417 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+
+  <!-- ============ SEO ============ -->
+  <title>Florency Dalsania — Business Analyst &amp; Operations | MSc International Business Research</title>
+  <meta name="description" content="Florency Dalsania — MSc International Business Research student at the University of Gloucestershire. Business analysis, stakeholder management, customer insights and project coordination. Based in London, seeking Business Analyst &amp; Operations opportunities.">
+  <meta name="author" content="Florency Dalsania">
+  <meta name="theme-color" content="#f6f3ee" media="(prefers-color-scheme: light)">
+  <meta name="theme-color" content="#0f1311" media="(prefers-color-scheme: dark)">
+
+  <!-- Open Graph / Twitter. PLACEHOLDER: replace og:url and og:image once deployed. -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Florency Dalsania — Business Analyst &amp; Operations">
+  <meta property="og:description" content="Business analysis · Stakeholder management · Customer insights · Project coordination. MSc International Business Research, University of Gloucestershire.">
+  <meta property="og:url" content="https://USERNAME.github.io/">
+  <meta property="og:image" content="assets/og-image.jpg">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Florency Dalsania — Business Analyst &amp; Operations">
+  <meta name="twitter:description" content="Business analysis · Stakeholder management · Customer insights · Project coordination.">
+  <meta name="twitter:image" content="assets/og-image.jpg">
+
+  <!-- Inline SVG favicon (monogram "F" on accent) -->
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230f766e'/%3E%3Cpath d='M22 16h22v7H30v9h12v7H30v14h-8z' fill='%23f6f3ee'/%3E%3C/svg%3E">
+
+  <!-- Fonts: Fraunces (display) + Manrope (body) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,300;0,9..144,500;0,9..144,600;1,9..144,300;1,9..144,500&family=Manrope:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Apply saved theme before first paint to avoid a flash -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (t === 'dark' || t === 'light') document.documentElement.setAttribute('data-theme', t);
+      } catch (e) {}
+    })();
+  </script>
+</head>
+
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- Film-grain overlay (pure CSS/SVG, no JS) -->
+  <div class="grain" aria-hidden="true"></div>
+
+  <!-- ============ HEADER / NAV ============ -->
+  <header class="site-header" id="top">
+    <nav class="nav" aria-label="Primary">
+      <a class="brand" href="#top" aria-label="Florency Dalsania — home">
+        <span class="brand__mark" aria-hidden="true">F</span>
+        <span class="brand__name">Florency Dalsania</span>
+      </a>
+
+      <ul class="nav__links" id="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#education">Education</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+
+      <div class="nav__actions">
+        <button class="theme-toggle" id="theme-toggle" type="button" aria-label="Switch to dark theme" aria-pressed="false">
+          <svg class="icon icon--sun" viewBox="0 0 24 24" aria-hidden="true"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.6M12 18.9v2.6M4.9 4.9l1.9 1.9M17.2 17.2l1.9 1.9M2.5 12h2.6M18.9 12h2.6M4.9 19.1l1.9-1.9M17.2 6.8l1.9-1.9"/></svg>
+          <svg class="icon icon--moon" viewBox="0 0 24 24" aria-hidden="true"><path d="M20.5 14.2A8.5 8.5 0 0 1 9.8 3.5a8.5 8.5 0 1 0 10.7 10.7z"/></svg>
+        </button>
+        <a class="btn btn--ghost nav__cta" href="cv/CV.pdf" download>Download CV</a>
+        <button class="menu-toggle" id="menu-toggle" type="button" aria-label="Open menu" aria-expanded="false" aria-controls="mobile-menu">
+          <span class="menu-toggle__bar"></span>
+          <span class="menu-toggle__bar"></span>
+        </button>
+      </div>
+    </nav>
+  </header>
+
+  <!-- Mobile menu (animated). Lives outside the header because the header's
+       backdrop-filter would otherwise become the containing block for this fixed panel. -->
+  <div class="mobile-menu" id="mobile-menu" hidden>
+    <ul class="mobile-menu__links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    <a class="btn btn--primary" href="cv/CV.pdf" download>Download CV</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ============ HERO ============ -->
+    <section class="hero" aria-labelledby="hero-title">
+      <div class="hero__bg" aria-hidden="true">
+        <span class="blob blob--1"></span>
+        <span class="blob blob--2"></span>
+        <span class="blob blob--3"></span>
+      </div>
+
+      <div class="container hero__inner">
+        <p class="eyebrow reveal">MSc International Business Research · London</p>
+        <h1 class="hero__title" id="hero-title">
+          <span class="line"><span>Turning customer</span></span>
+          <span class="line"><span><em>insight</em> into</span></span>
+          <span class="line"><span>operational clarity.</span></span>
+        </h1>
+        <p class="hero__lede reveal" style="--d:.35s">
+          Business analysis, stakeholder management, customer insights and project coordination —
+          currently researching how environmental CSR shapes business performance, and seeking
+          Business Analyst &amp; Operations opportunities.
+        </p>
+        <div class="hero__actions reveal" style="--d:.5s">
+          <a class="btn btn--primary magnetic" href="#projects">View work</a>
+          <a class="btn btn--ghost magnetic" href="#contact">Get in touch</a>
+        </div>
+
+        <ul class="hero__meta reveal" style="--d:.65s" aria-label="Quick facts">
+          <li><span class="hero__meta-k">Based in</span> Edgware, London</li>
+          <li><span class="hero__meta-k">Studying</span> University of Gloucestershire</li>
+          <li><span class="hero__meta-k">Open to</span> Business Analyst · Operations</li>
+        </ul>
+      </div>
+
+      <a class="scroll-cue" href="#about" aria-label="Scroll to about">
+        <span></span>
+      </a>
+    </section>
+
+    <!-- ============ ABOUT ============ -->
+    <section class="section about" id="about" aria-labelledby="about-title">
+      <div class="container grid grid--about">
+        <div class="about__media reveal">
+          <!-- PLACEHOLDER: drop a portrait at assets/profile.jpg (recommended 800×1000). -->
+          <figure class="portrait">
+            <img src="assets/profile.jpg" alt="Portrait of Florency Dalsania" width="800" height="1000" loading="lazy"
+                 onerror="this.parentNode.classList.add('portrait--empty')">
+            <figcaption class="portrait__fallback" aria-hidden="true">
+              <span>F</span>
+              <small>Add assets/profile.jpg</small>
+            </figcaption>
+          </figure>
+        </div>
+
+        <div class="about__body">
+          <p class="eyebrow reveal">About</p>
+          <h2 class="section__title reveal" id="about-title">A design consultant turned <em>business researcher</em>.</h2>
+          <div class="prose reveal" style="--d:.15s">
+            <p>
+              I spent over two years as a Furniture Design Consultant at Bemor Furniture City in Hyderabad,
+              consulting with 18+ clients a month and coordinating 12+ live projects at a time — from first
+              consultation through production, vendors and delivery. That work taught me how to read what a
+              customer actually needs, keep many stakeholders aligned, and hold quality under pressure.
+            </p>
+            <p>
+              Now in London, I'm completing an MSc by Research in International Business at the University of
+              Gloucestershire, investigating the link between environmental Corporate Social Responsibility and
+              organisational performance, while working part-time in customer service at TFC Holdings London.
+            </p>
+            <p>
+              I'm looking for a Business Analyst or Operations role where customer insight, process improvement
+              and clear communication make a measurable difference.
+            </p>
+          </div>
+
+          <dl class="facts reveal" style="--d:.25s">
+            <div><dt>Focus</dt><dd>Business analysis · Operations</dd></div>
+            <div><dt>Research</dt><dd>Environmental CSR &amp; performance</dd></div>
+            <div><dt>Background</dt><dd>Interior design · Client consulting</dd></div>
+          </dl>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ SKILLS ============ -->
+    <section class="section skills" id="skills" aria-labelledby="skills-title">
+      <div class="container">
+        <p class="eyebrow reveal">Skills</p>
+        <h2 class="section__title reveal" id="skills-title">What I bring to <em>the table</em>.</h2>
+
+        <div class="skills__grid">
+          <article class="skill-group reveal">
+            <h3>Analysis &amp; Research</h3>
+            <ul class="tags">
+              <li>Business Analysis</li>
+              <li>Business Research</li>
+              <li>Analytical Skills</li>
+              <li>Business Process Improvement</li>
+              <li>Data Analysis</li>
+            </ul>
+          </article>
+          <article class="skill-group reveal" style="--d:.1s">
+            <h3>Delivery &amp; Stakeholders</h3>
+            <ul class="tags">
+              <li>Stakeholder Management</li>
+              <li>Project Coordination</li>
+              <li>Customer Relationship Management</li>
+              <li>Client Consultation</li>
+              <li>Vendor Coordination</li>
+            </ul>
+          </article>
+          <article class="skill-group reveal" style="--d:.2s">
+            <h3>Tools &amp; Interpersonal</h3>
+            <ul class="tags">
+              <li>Microsoft Excel</li>
+              <li>Communication</li>
+              <li>Problem Solving</li>
+              <li>Teamwork</li>
+              <li>Attention to Detail</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ PROJECTS ============ -->
+    <section class="section projects" id="projects" aria-labelledby="projects-title">
+      <div class="container">
+        <p class="eyebrow reveal">Projects</p>
+        <h2 class="section__title reveal" id="projects-title">Selected <em>work</em>.</h2>
+
+        <div class="cards">
+          <!-- Real project from LinkedIn -->
+          <article class="card reveal">
+            <a class="card__media" href="#projects" aria-hidden="true" tabindex="-1">
+              <!-- PLACEHOLDER: add assets/project-csr.jpg (16:10). Gradient shows until you do. -->
+              <img src="assets/project-csr.jpg" alt="" loading="lazy" width="1200" height="750"
+                   onerror="this.remove()">
+              <span class="card__year">2026 — present</span>
+            </a>
+            <div class="card__body">
+              <h3 class="card__title">Bridging Intent and Impact: Environmental CSR &amp; Environmental Performance</h3>
+              <p class="card__desc">
+                Postgraduate research at the University of Gloucestershire examining the relationship between
+                environmental Corporate Social Responsibility, business strategy and organisational performance —
+                through literature review, critical analysis and evidence-based recommendations.
+              </p>
+              <ul class="tags tags--sm">
+                <li>Business Research</li><li>Data Analysis</li><li>CSR</li><li>Strategy</li>
+              </ul>
+              <div class="card__links">
+                <!-- PLACEHOLDER: link to thesis summary / PDF when available -->
+                <a href="#" class="link-arrow" aria-disabled="true">Summary coming soon</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PLACEHOLDER CARD 1 — replace or delete -->
+          <article class="card card--placeholder reveal" style="--d:.1s">
+            <a class="card__media" href="#projects" aria-hidden="true" tabindex="-1">
+              <span class="card__year">PLACEHOLDER</span>
+            </a>
+            <div class="card__body">
+              <h3 class="card__title">[Project title]</h3>
+              <p class="card__desc">[One or two sentences: the problem, what you did, the outcome. Add a real project or delete this card.]</p>
+              <ul class="tags tags--sm"><li>[Tag]</li><li>[Tag]</li></ul>
+              <div class="card__links">
+                <a href="#" class="link-arrow">[Live / repo link]</a>
+              </div>
+            </div>
+          </article>
+
+          <!-- PLACEHOLDER CARD 2 — replace or delete -->
+          <article class="card card--placeholder reveal" style="--d:.2s">
+            <a class="card__media" href="#projects" aria-hidden="true" tabindex="-1">
+              <span class="card__year">PLACEHOLDER</span>
+            </a>
+            <div class="card__body">
+              <h3 class="card__title">[Project title]</h3>
+              <p class="card__desc">[One or two sentences. Add a real project or delete this card.]</p>
+              <ul class="tags tags--sm"><li>[Tag]</li><li>[Tag]</li></ul>
+              <div class="card__links">
+                <a href="#" class="link-arrow">[Live / repo link]</a>
+              </div>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ EXPERIENCE ============ -->
+    <section class="section experience" id="experience" aria-labelledby="experience-title">
+      <div class="container">
+        <p class="eyebrow reveal">Experience</p>
+        <h2 class="section__title reveal" id="experience-title">Where I've <em>worked</em>.</h2>
+
+        <ol class="timeline">
+          <li class="timeline__item reveal">
+            <div class="timeline__when">
+              <time datetime="2025-04">Apr 2025</time> — Present
+              <span class="timeline__loc">London · On-site · Part-time</span>
+            </div>
+            <div class="timeline__what">
+              <h3>Customer Service Assistant <span class="at">TFC Holdings London LTD</span></h3>
+              <ul>
+                <li>Assist customers with enquiries and deliver a positive shopping experience in a fast-paced retail environment.</li>
+                <li>Process cash and card transactions accurately, in line with company procedures.</li>
+                <li>Resolve customer concerns professionally, ensuring issues are addressed promptly.</li>
+                <li>Work with colleagues to keep store operations efficient and service standards consistently high.</li>
+                <li>Replenish stock, maintain displays and keep the store organised and well presented.</li>
+                <li>Adapt to shifting priorities at peak times while keeping accuracy and attention to detail.</li>
+              </ul>
+            </div>
+          </li>
+
+          <li class="timeline__item reveal">
+            <div class="timeline__when">
+              <time datetime="2022-09">Sep 2022</time> — <time datetime="2024-11">Nov 2024</time>
+              <span class="timeline__loc">Hyderabad, India · On-site · Full-time</span>
+            </div>
+            <div class="timeline__what">
+              <h3>Furniture Design Consultant <span class="at">Bemor Furniture City</span></h3>
+              <ul>
+                <li>Consulted with <strong>18+ clients each month</strong>, recommending tailored furniture solutions by budget, functionality and design preference.</li>
+                <li>Managed <strong>12+ customer projects simultaneously</strong>, coordinating from first consultation through order completion and delivery.</li>
+                <li>Collaborated with sales, production and external vendors to deliver on time and maintain service quality.</li>
+                <li>Tracked order progress and deliveries with vendors to ensure timely execution.</li>
+                <li>Resolved customer queries and complaints with the relevant teams; maintained accurate project and customer records.</li>
+                <li>Built strong client relationships through clear communication and a customer-focused approach.</li>
+              </ul>
+            </div>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <!-- ============ EDUCATION ============ -->
+    <section class="section education" id="education" aria-labelledby="education-title">
+      <div class="container">
+        <p class="eyebrow reveal">Education</p>
+        <h2 class="section__title reveal" id="education-title">Where I've <em>studied</em>.</h2>
+
+        <div class="edu">
+          <article class="edu__item reveal">
+            <div class="edu__head">
+              <h3>MSc (by Research), International Business Research</h3>
+              <p class="edu__school">University of Gloucestershire · <time datetime="2025-01">Jan 2025</time> — <time datetime="2027-01">Jan 2027</time></p>
+            </div>
+            <p>
+              Research focus: Environmental Corporate Social Responsibility (CSR), Employee Environmental Commitment,
+              Environmental Strategy and Environmental Performance.
+            </p>
+            <p class="edu__modules"><strong>Modules:</strong> International Strategic Marketing · Research in International Logistics ·
+              International Trade Law · Global Leadership Challenges · Accounting and Finance for Global Managers ·
+              International Business · Cross-Cultural Issues in International Business.</p>
+          </article>
+
+          <article class="edu__item reveal" style="--d:.1s">
+            <div class="edu__head">
+              <h3>Bachelor of Interior Design</h3>
+              <p class="edu__school">Marwadi University · <time datetime="2018-04">Apr 2018</time> — <time datetime="2022-05">May 2022</time> · CGPA 7.29</p>
+            </div>
+            <p>
+              Developed creative problem-solving, project planning, client consultation, space planning, design
+              presentation and project management skills through academic projects and practical assignments.
+            </p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- ============ CONTACT ============ -->
+    <section class="section contact" id="contact" aria-labelledby="contact-title">
+      <div class="container contact__inner">
+        <p class="eyebrow reveal">Contact</p>
+        <h2 class="section__title section__title--xl reveal" id="contact-title">Let's build something <em>that works</em>.</h2>
+        <p class="contact__lede reveal" style="--d:.1s">
+          Open to Business Analyst and Operations roles in London. Say hello — I reply to every message.
+        </p>
+
+        <div class="contact__actions reveal" style="--d:.2s">
+          <!-- PLACEHOLDER: replace with the real email address -->
+          <a class="btn btn--primary btn--lg magnetic" href="mailto:EMAIL@PLACEHOLDER.com">Email me</a>
+          <a class="btn btn--ghost btn--lg magnetic" href="cv/CV.pdf" download>Download CV</a>
+        </div>
+
+        <ul class="socials reveal" style="--d:.3s" aria-label="Profiles">
+          <li>
+            <a href="https://www.linkedin.com/in/florency/" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6.5 8.8v9.7H3.3V8.8h3.2ZM6.7 5.7a1.8 1.8 0 1 1-3.6 0 1.8 1.8 0 0 1 3.6 0Zm14 7.1v5.7h-3.2v-5.3c0-1.3-.5-2.2-1.7-2.2-.9 0-1.5.6-1.7 1.2-.1.2-.1.5-.1.8v5.5H10.8s.1-8.9 0-9.7H14v1.4c.4-.7 1.2-1.6 2.9-1.6 2.1 0 3.8 1.4 3.8 4.2Z"/></svg>
+              LinkedIn
+            </a>
+          </li>
+          <li>
+            <!-- PLACEHOLDER: GitHub username -->
+            <a href="https://github.com/USERNAME" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 2a10 10 0 0 0-3.2 19.5c.5.1.7-.2.7-.5v-1.8c-2.8.6-3.4-1.2-3.4-1.2-.4-1.1-1.1-1.4-1.1-1.4-.9-.6.1-.6.1-.6 1 .1 1.5 1 1.5 1 .9 1.6 2.4 1.1 3 .9.1-.7.4-1.1.6-1.4-2.2-.3-4.6-1.1-4.6-5 0-1.1.4-2 1-2.7-.1-.3-.4-1.3.1-2.7 0 0 .8-.3 2.8 1a9.5 9.5 0 0 1 5 0c1.9-1.3 2.8-1 2.8-1 .5 1.4.2 2.4.1 2.7.6.7 1 1.6 1 2.7 0 3.9-2.4 4.7-4.6 5 .4.3.7.9.7 1.9v2.8c0 .3.2.6.7.5A10 10 0 0 0 12 2Z"/></svg>
+              GitHub
+            </a>
+          </li>
+          <li>
+            <a href="mailto:EMAIL@PLACEHOLDER.com">
+              <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 5h18a1 1 0 0 1 1 1v12a1 1 0 0 1-1 1H3a1 1 0 0 1-1-1V6a1 1 0 0 1 1-1Zm1 2.4V17h16V7.4l-8 5.3-8-5.3ZM5.2 7l6.8 4.5L18.8 7H5.2Z"/></svg>
+              Email
+            </a>
+          </li>
+        </ul>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container site-footer__inner">
+      <p>© <span id="year"></span> Florency Dalsania. Designed &amp; built with care.</p>
+      <a href="#top" class="back-top">Back to top ↑</a>
+    </div>
+  </footer>
+
+  <script src="script.js" defer></script>
+</body>
+</html>
