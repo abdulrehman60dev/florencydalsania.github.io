@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Line illustration of drafting tools and a design sketch">
+  <defs><linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#2a2340"/><stop offset="1" stop-color="#4a3f6e"/></linearGradient></defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <g fill="none" stroke="#f1ecff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- drawing board -->
+    <rect x="180" y="150" width="840" height="470" rx="10" stroke-width="4"/>
+    <path d="M220 190 h760 M220 230 h760 M220 270 h760 M220 310 h760 M220 350 h760 M220 390 h760 M220 430 h760 M220 470 h760 M220 510 h760 M220 550 h760" stroke-opacity=".12"/>
+    <!-- perspective room sketch -->
+    <path d="M300 560 L560 420 L840 420 L1000 560 M560 420 v-200 L840 220 v200 M300 200 L560 220 M1000 200 L840 220 M300 200 v360 M1000 200 v360" stroke-opacity=".9"/>
+    <path d="M620 420 v-90 h100 v90 M620 330 l100 0" stroke-opacity=".6"/>
+    <path d="M420 500 l120 -60 l60 0 l-120 60 z M540 440 v-40 M600 440 v-40" stroke-opacity=".7"/>
+    <!-- set square -->
+    <path d="M260 600 l160 0 l-160 -110 z" stroke-opacity=".85"/>
+    <path d="M280 590 l110 0 l-110 -75 z" stroke-opacity=".4"/>
+    <!-- ruler -->
+    <g transform="translate(700 560) rotate(-8)"><rect x="0" y="0" width="300" height="34" rx="4"/><path d="M20 0 v12 M40 0 v8 M60 0 v12 M80 0 v8 M100 0 v12 M120 0 v8 M140 0 v12 M160 0 v8 M180 0 v12 M200 0 v8 M220 0 v12 M240 0 v8 M260 0 v12 M280 0 v8" stroke-opacity=".8"/></g>
+    <!-- pencil -->
+    <g transform="translate(880 240) rotate(40)"><rect x="0" y="0" width="200" height="26" rx="6"/><path d="M200 0 l40 13 l-40 13 M228 8 l6 5 l-6 5" stroke-opacity=".9"/></g>
+  </g>
+</svg>

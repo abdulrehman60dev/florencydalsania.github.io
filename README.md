@@ -13,10 +13,23 @@ florency-portfolio/
 ├── cv/
 │   └── CV.pdf      # ← drop the CV here (exact filename: CV.pdf)
 └── assets/
-    ├── profile.jpg       # portrait for the About section (included, 800×800)
-    ├── project-csr.jpg   # ← optional cover image for the CSR research card (16:10)
-    └── og-image.jpg      # ← social share image (1200×630)
+    ├── profile.jpg            # portrait for the About section (included, 800×800)
+    ├── illus-csr.svg          # original vector artwork used as card/education covers
+    ├── illus-interior.svg     #   (these are the fallbacks — drop a photo with the
+    ├── illus-campus.svg       #    matching .jpg name below and it replaces the artwork)
+    ├── illus-marwadi.svg
+    ├── project-csr.jpg        # ← optional HD photo, 16:10
+    ├── project-bemor.jpg      # ← optional HD photo, 16:10 (interior / furniture work)
+    ├── project-degree.jpg     # ← optional HD photo, 16:10 (degree project)
+    ├── uni-gloucestershire.jpg# ← optional HD campus photo, 16:10 (must be licensed/own photo)
+    ├── uni-marwadi.jpg        # ← optional HD campus photo, 16:10
+    └── og-image.jpg           # ← social share image (1200×630)
 ```
+
+**Images:** every image slot has an original SVG illustration as its fallback, so the site looks
+finished with no photos at all. To use a real photo, just add the `.jpg` with the exact name above —
+no code change needed. Only use photos you own or have a licence for (university press/media pages
+usually offer approved campus images).
 
 All paths are relative, so the site works at `https://username.github.io/` **and** at
 `https://username.github.io/repo-name/` without changes.
@@ -38,13 +51,13 @@ could not be retrieved. Replace it with her real summary if she has one.
 |---|-------|-----------|
 | 1 | `cv/CV.pdf` | Add the CV PDF with this exact name. |
 | 2 | `assets/profile.jpg` | ✅ Included (800×800, taken from LinkedIn). Replace with a higher-resolution photo if she has one. |
-| 3 | `assets/project-csr.jpg` | Optional cover image for the research card. A gradient shows until then. |
+| 3 | `assets/project-*.jpg`, `assets/uni-*.jpg` | Optional HD photos (see tree above). Vector illustrations show until then. |
 | 4 | `assets/og-image.jpg` | Social preview image (1200×630). |
 | 5 | `<meta property="og:url">` | Replace `https://USERNAME.github.io/` with the live URL. |
 | 6 | Contact section | Replace `EMAIL@PLACEHOLDER.com` (appears twice) with the real email. |
 | 7 | Contact section | Replace `https://github.com/USERNAME` with the real GitHub profile, or delete that `<li>`. |
-| 8 | Projects | Two dashed **placeholder cards** — replace with real projects or delete them. |
-| 9 | Projects (CSR card) | Swap "Summary coming soon" for a real link to a thesis summary/PDF when available. |
+| 8 | Projects → CSR modal | Add a link to a thesis summary / PDF when available (comment marks the spot). |
+| 9 | Projects → Degree modal | Optionally add 2–3 named degree projects with images. |
 | 10 | About | Optionally replace the About copy with LinkedIn's own summary. |
 
 Nothing else is invented: no certifications, awards or languages are shown because none were
@@ -86,6 +99,7 @@ Hard-refresh (Cmd/Ctrl + Shift + R) if you still see the old version.
 
 ## Notes
 
+- Projects: clicking a card opens an accessible summary dialog (focus-trapped, Esc / backdrop / × to close).
 - Themes: light/dark toggle in the header; follows the OS preference until a choice is made,
   then persists in `localStorage`.
 - Accessibility: semantic landmarks, skip link, keyboard-operable menu (Esc closes), visible

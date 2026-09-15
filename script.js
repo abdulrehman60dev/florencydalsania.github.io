@@ -165,7 +165,57 @@
     });
   }
 
-  /* ---------- 6. Misc ---------- */
+  /* ---------- 6. Project summary modals ---------- */
+  // Each .card__hit button carries data-modal="<id>". The dialog traps focus,
+  // closes on Esc / backdrop / × and returns focus to the opener.
+  let openModal = null;
+  let opener = null;
+  const FOCUSABLE = 'a[href], button:not([disabled]), [tabindex]:not([tabindex="-1"])';
+
+  function showModal(id, from) {
+    const m = document.getElementById(id);
+    if (!m) return;
+    opener = from || document.activeElement;
+    openModal = m;
+    m.hidden = false;
+    requestAnimationFrame(() => requestAnimationFrame(() => m.classList.add('is-open')));
+    document.body.classList.add('modal-open');
+    const first = m.querySelector('.modal__close');
+    if (first) first.focus({ preventScroll: true });
+  }
+
+  function hideModal() {
+    if (!openModal) return;
+    const m = openModal;
+    m.classList.remove('is-open');
+    document.body.classList.remove('modal-open');
+    const done = () => { m.hidden = true; };
+    if (reduceMotion.matches) done(); else setTimeout(done, 320);
+    if (opener && typeof opener.focus === 'function') opener.focus({ preventScroll: true });
+    openModal = null; opener = null;
+  }
+
+  document.querySelectorAll('[data-modal]').forEach(btn => {
+    btn.addEventListener('click', () => showModal(btn.getAttribute('data-modal'), btn));
+  });
+  document.querySelectorAll('.modal').forEach(m => {
+    m.addEventListener('click', (e) => {
+      if (e.target === m || e.target.closest('.modal__close')) hideModal();
+    });
+  });
+  document.addEventListener('keydown', (e) => {
+    if (!openModal) return;
+    if (e.key === 'Escape') { hideModal(); return; }
+    if (e.key === 'Tab') {
+      const items = Array.from(openModal.querySelectorAll(FOCUSABLE));
+      if (!items.length) return;
+      const first = items[0], last = items[items.length - 1];
+      if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+      else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+    }
+  });
+
+  /* ---------- 7. Misc ---------- */
   const year = document.getElementById('year');
   if (year) year.textContent = new Date().getFullYear();
 })();

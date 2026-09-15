@@ -1,0 +1,50 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 750" width="1200" height="750" role="img" aria-label="Line illustration of a furnished living space in plan and elevation">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="1" y2="1"><stop offset="0" stop-color="#3b2a22"/><stop offset="1" stop-color="#6b4a3a"/></linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse"><path d="M50 0H0V50" fill="none" stroke="#ffffff" stroke-opacity=".07"/></pattern>
+  </defs>
+  <rect width="1200" height="750" fill="url(#bg)"/>
+  <rect width="1200" height="750" fill="url(#grid)"/>
+  <g fill="none" stroke="#f6e7d8" stroke-width="3" stroke-linecap="round" stroke-linejoin="round">
+    <!-- floor plan -->
+    <rect x="110" y="120" width="520" height="500" rx="4" stroke-width="5"/>
+    <path d="M110 330 h130 M330 330 h300" stroke-width="5"/>
+    <path d="M240 330 a90 90 0 0 1 90 90" stroke-opacity=".6" stroke-dasharray="6 8"/>
+    <!-- sofa -->
+    <rect x="160" y="420" width="220" height="80" rx="16"/>
+    <rect x="160" y="420" width="40" height="80" rx="12"/><rect x="340" y="420" width="40" height="80" rx="12"/>
+    <path d="M200 440 h140 M200 480 h140" stroke-opacity=".5"/>
+    <!-- table -->
+    <circle cx="270" cy="560" r="34"/><circle cx="270" cy="560" r="12" stroke-opacity=".5"/>
+    <!-- bed -->
+    <rect x="400" y="380" width="200" height="200" rx="8"/>
+    <rect x="410" y="390" width="80" height="50" rx="8"/><rect x="510" y="390" width="80" height="50" rx="8"/>
+    <path d="M400 470 h200" stroke-opacity=".5"/>
+    <!-- desk & chair -->
+    <rect x="150" y="160" width="180" height="60" rx="4"/><circle cx="240" cy="260" r="22"/>
+    <!-- wardrobe -->
+    <rect x="450" y="150" width="150" height="60" rx="4"/><path d="M525 150 v60" stroke-opacity=".6"/>
+    <!-- plant -->
+    <circle cx="590" cy="290" r="26"/><path d="M590 290 l-14 -20 M590 290 l14 -20 M590 290 v-26" stroke-opacity=".7"/>
+    <!-- dimension lines -->
+    <path d="M110 90 h520 M110 80 v20 M630 80 v20" stroke-opacity=".5"/>
+    <path d="M80 120 v500 M70 120 h20 M70 620 h20" stroke-opacity=".5"/>
+  </g>
+  <!-- elevation card -->
+  <g transform="translate(720 150)">
+    <rect x="0" y="0" width="380" height="440" rx="18" fill="#f6e7d8" fill-opacity=".08" stroke="#f6e7d8" stroke-opacity=".35" stroke-width="2"/>
+    <g fill="none" stroke="#f6e7d8" stroke-width="3" stroke-linecap="round">
+      <path d="M40 340 h300"/>
+      <!-- armchair -->
+      <path d="M70 340 v-90 q0 -20 20 -20 h20 v-40 q0 -14 14 -14 h60 q14 0 14 14 v40 h20 q20 0 20 20 v90"/>
+      <path d="M110 230 h108" stroke-opacity=".6"/>
+      <!-- lamp -->
+      <path d="M290 340 v-170 M260 170 h60 l-12 -50 h-36 z"/>
+      <!-- shelf -->
+      <path d="M60 90 h150 M75 90 v-40 h22 v40 M110 90 v-56 h16 v56 M140 90 v-30 h30 v30" stroke-opacity=".8"/>
+      <!-- frame -->
+      <rect x="230" y="40" width="110" height="70" rx="4"/><path d="M240 100 l30 -30 l20 18 l18 -26 l32 38" stroke-opacity=".7"/>
+    </g>
+    <circle cx="80" cy="400" r="10" fill="#e9c9a8"/><circle cx="110" cy="400" r="10" fill="#c98f6b"/><circle cx="140" cy="400" r="10" fill="#8a5a44"/><circle cx="170" cy="400" r="10" fill="#f6e7d8"/>
+  </g>
+</svg>
