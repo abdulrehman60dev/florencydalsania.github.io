@@ -100,8 +100,8 @@ Hard-refresh (Cmd/Ctrl + Shift + R) if you still see the old version.
 ## Notes
 
 - Projects: clicking a card opens an accessible summary dialog (focus-trapped, Esc / backdrop / × to close).
-- Themes: light/dark toggle in the header; follows the OS preference until a choice is made,
-  then persists in `localStorage`.
+- Themes: light on every device by default; the header toggle switches to dark and the choice
+  persists in `localStorage`.
 - Accessibility: semantic landmarks, skip link, keyboard-operable menu (Esc closes), visible
   focus rings, AA contrast in both themes, `prefers-reduced-motion` honoured.
 - Performance: no libraries; only Google Fonts are loaded externally; images are lazy-loaded.

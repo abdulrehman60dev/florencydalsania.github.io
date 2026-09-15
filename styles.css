@@ -41,7 +41,7 @@
   color-scheme: light;
 }
 
-/* Dark palette — deep moss/charcoal with a luminous mint accent */
+/* Dark palette — opt-in via the header toggle only (light is the default on every device) */
 :root[data-theme="dark"] {
   --bg: #0f1311;
   --bg-elev: #161b19;
@@ -59,20 +59,6 @@
   --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -12px rgba(0,0,0,.6);
   --shadow-lg: 0 2px 4px rgba(0,0,0,.3), 0 30px 60px -20px rgba(0,0,0,.7);
   color-scheme: dark;
-}
-
-/* System preference when no explicit choice has been saved */
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) {
-    --bg: #0f1311; --bg-elev: #161b19; --bg-sunk: #0a0d0c;
-    --ink: #eef0ec; --ink-2: #b6bdb9; --ink-3: #8a938f;
-    --line: rgba(238, 240, 236, 0.12);
-    --accent: #5fd3c2; --accent-ink: #0f1311; --accent-soft: rgba(95, 211, 194, 0.12);
-    --blob-1: #1f5a54; --blob-2: #5a3a2c; --blob-3: #3a3358;
-    --shadow: 0 1px 2px rgba(0,0,0,.3), 0 12px 32px -12px rgba(0,0,0,.6);
-    --shadow-lg: 0 2px 4px rgba(0,0,0,.3), 0 30px 60px -20px rgba(0,0,0,.7);
-    color-scheme: dark;
-  }
 }
 
 /* ---------- 2. Base ---------- */
@@ -129,7 +115,6 @@ time { white-space: nowrap; }
   animation: grain 8s steps(10) infinite;
 }
 :root[data-theme="dark"] .grain { mix-blend-mode: screen; opacity: .07; }
-@media (prefers-color-scheme: dark) { :root:not([data-theme="light"]) .grain { mix-blend-mode: screen; opacity: .07; } }
 @keyframes grain {
   0%, 100% { transform: translate(0,0); } 10% { transform: translate(-3%,-6%); }
   30% { transform: translate(4%,2%); } 50% { transform: translate(-2%,5%); }
@@ -290,11 +275,6 @@ body:not(.is-intro) .intro { display: none; }
 .icon--moon { fill: currentColor; stroke: none; transform: translateY(150%) rotate(-40deg); opacity: 0; }
 :root[data-theme="dark"] .icon--sun { transform: translateY(-150%) rotate(40deg); opacity: 0; }
 :root[data-theme="dark"] .icon--moon { transform: none; opacity: 1; }
-@media (prefers-color-scheme: dark) {
-  :root:not([data-theme="light"]) .icon--sun { transform: translateY(-150%) rotate(40deg); opacity: 0; }
-  :root:not([data-theme="light"]) .icon--moon { transform: none; opacity: 1; }
-}
-
 /* Hamburger */
 .menu-toggle {
   display: none; width: 40px; height: 40px; border-radius: 50%; border: 1px solid var(--line);

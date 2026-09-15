@@ -1,7 +1,7 @@
 /* ==========================================================================
    Florency Dalsania — Portfolio
    Vanilla JS. No dependencies. Everything degrades gracefully without JS.
-   1. Theme toggle (persisted, respects system preference)
+   1. Theme toggle (light by default, dark opt-in, persisted)
    2. Sticky header state + active nav underline (IntersectionObserver)
    3. Mobile menu (animated, focus-managed, Esc to close)
    4. Scroll reveal (IntersectionObserver)
@@ -17,12 +17,10 @@
 
   /* ---------- 1. Theme ---------- */
   const toggle = document.getElementById('theme-toggle');
-  const systemDark = window.matchMedia('(prefers-color-scheme: dark)');
 
+  // Light is the default on every device; dark is opt-in via the toggle and remembered.
   function currentTheme() {
-    const explicit = root.getAttribute('data-theme');
-    if (explicit) return explicit;
-    return systemDark.matches ? 'dark' : 'light';
+    return root.getAttribute('data-theme') === 'dark' ? 'dark' : 'light';
   }
 
   function applyTheme(theme, persist) {
@@ -43,12 +41,6 @@
   if (toggle) {
     toggle.addEventListener('click', () => {
       applyTheme(currentTheme() === 'dark' ? 'light' : 'dark', true);
-    });
-    // Follow the OS if the user hasn't chosen explicitly
-    systemDark.addEventListener('change', () => {
-      let saved = null;
-      try { saved = localStorage.getItem('theme'); } catch (e) {}
-      if (!saved) { root.removeAttribute('data-theme'); syncToggle(); }
     });
     syncToggle();
   }
