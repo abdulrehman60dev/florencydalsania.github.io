@@ -179,6 +179,10 @@
       if (window.__revealHero) window.__revealHero();
     };
     if (!overlay || !name || reduceMotion.matches || !('animate' in name)) { finish(); return; }
+    // The overlay ships hidden and only appears once this script is running,
+    // so a stale cache or a blocked script can never leave it on the page.
+    document.body.classList.add('is-intro');
+    overlay.hidden = false;
 
     const run = () => {
       // FLIP: measure where the name is now and where it must end up.
