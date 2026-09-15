@@ -618,7 +618,8 @@ body.modal-open { overflow: hidden; }
   .timeline__item::before { left: 0; top: 8px; }
 }
 @media (max-width: 560px) {
-  .brand__name { display: none; }
+  .brand__name { font-size: .9rem; }
+  .brand { gap: 10px; }
   .nav { height: 64px; }
   .mobile-menu { inset: 64px 0 0 0; }
   .hero { min-height: calc(100svh - 64px); }
