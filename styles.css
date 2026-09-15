@@ -136,6 +136,26 @@ time { white-space: nowrap; }
   70% { transform: translate(5%,-3%); } 90% { transform: translate(-4%,3%); }
 }
 
+/* ---------- 2b. Intro sequence ---------- */
+.intro {
+  position: fixed; inset: 0; z-index: 200; display: grid; place-items: center;
+  background: var(--bg); pointer-events: none;
+}
+.intro__name {
+  font-family: var(--font-display); font-weight: 500; font-variation-settings: "opsz" 144;
+  font-size: clamp(2.6rem, 9vw, 7.5rem); line-height: 1; letter-spacing: -.03em; color: var(--ink);
+  white-space: nowrap; transform-origin: 0 0; will-change: transform, opacity;
+  opacity: 0; animation: introIn .9s var(--ease-out) .1s forwards;
+}
+@keyframes introIn { from { opacity: 0; transform: translateY(18px); } to { opacity: 1; transform: none; } }
+/* While the intro runs: hide the header brand name and hold the hero's own animations */
+body.is-intro .brand__name { opacity: 0; }
+.brand__name { transition: opacity .2s; }
+body.is-intro .hero__title .line > span,
+body.is-intro .hero__art, body.is-intro .hero__art * { animation-play-state: paused; }
+body:not(.is-intro) .intro { display: none; }
+@media (prefers-reduced-motion: reduce) { .intro { display: none; } body.is-intro .brand__name { opacity: 1; } }
+
 /* ---------- 3. Typography ---------- */
 .eyebrow {
   font-size: .78rem; font-weight: 700; letter-spacing: .16em; text-transform: uppercase;

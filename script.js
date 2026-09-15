@@ -133,12 +133,14 @@
         }
       });
     }, { rootMargin: '0px 0px -10% 0px', threshold: 0.08 });
+    const onScreen = [];
     revealEls.forEach(el => {
-      // Anything already on screen at load (the hero) reveals immediately,
-      // staggered by its own --d delay, instead of waiting for a scroll.
-      if (el.getBoundingClientRect().top < window.innerHeight) el.classList.add('is-visible');
+      // Anything already on screen at load (the hero) reveals as soon as the
+      // intro finishes, staggered by its own --d delay; the rest wait for scroll.
+      if (el.getBoundingClientRect().top < window.innerHeight) onScreen.push(el);
       else io.observe(el);
     });
+    window.__revealHero = () => onScreen.forEach(el => el.classList.add('is-visible'));
   }
 
   /* ---------- 5. Magnetic buttons ---------- */
@@ -164,6 +166,44 @@
       });
     });
   }
+
+  /* ---------- 5b. Intro: name shrinks and travels into the header brand ---------- */
+  (function intro() {
+    const overlay = document.getElementById('intro');
+    const name = document.getElementById('intro-name');
+    const brandName = document.querySelector('.brand__name');
+    const brandMark = document.querySelector('.brand__mark');
+    const finish = () => {
+      document.body.classList.remove('is-intro');
+      if (overlay) overlay.remove();
+      if (window.__revealHero) window.__revealHero();
+    };
+    if (!overlay || !name || reduceMotion.matches || !('animate' in name)) { finish(); return; }
+
+    const run = () => {
+      // FLIP: measure where the name is now and where it must end up.
+      const from = name.getBoundingClientRect();
+      const nameVisible = brandName && brandName.offsetWidth > 0;
+      const to = (nameVisible ? brandName : brandMark).getBoundingClientRect();
+      const scale = nameVisible ? to.height / from.height : (brandMark.getBoundingClientRect().height / from.height) * 0.9;
+      const dx = to.left - from.left;
+      const dy = to.top - from.top + (nameVisible ? 0 : (to.height - from.height * scale) / 2);
+
+      const move = name.animate([
+        { transform: 'translate(0,0) scale(1)', opacity: 1 },
+        { transform: `translate(${dx}px, ${dy}px) scale(${scale})`, opacity: nameVisible ? 1 : 0 }
+      ], { duration: 950, easing: 'cubic-bezier(.7,0,.2,1)', fill: 'forwards' });
+
+      overlay.animate([{ opacity: 1 }, { opacity: 0 }],
+        { duration: 500, delay: 550, easing: 'ease-out', fill: 'forwards' });
+
+      move.onfinish = finish;
+      setTimeout(finish, 1800); // safety net
+    };
+
+    const ready = document.fonts && document.fonts.ready ? document.fonts.ready : Promise.resolve();
+    ready.then(() => setTimeout(run, 1100));
+  })();
 
   /* ---------- 6. Project summary modals ---------- */
   // Each .card__hit button carries data-modal="<id>". The dialog traps focus,
